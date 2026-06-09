@@ -95,5 +95,8 @@ spec:
       - ReadWriteOnce
       resources:
         requests:
-          storage: {{ .Values.apiDB.storageSize | quote }}
+          storage: {{ ( default .Values.dpiDB.storage.size .Values.apiDB.storageSize ) | quote }}
+      {{- with .Values.apiDB.storage.className }}
+      storageClassName: {{ . | quote }}
+      {{- end }}
 {{- end}}
