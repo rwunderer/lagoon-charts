@@ -3,8 +3,8 @@ name: Scheduled PR Summary to Release Tracker
 on:
   pull_request:
     types: [closed]
-  schedule:
-    - cron: '0 2 * * *'  # Every day at 02:00 UTC
+#  schedule:
+#    - cron: '0 2 * * *'  # Every day at 02:00 UTC
   workflow_dispatch:  # Optional manual trigger
   push:
     paths:
